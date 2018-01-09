@@ -1,0 +1,48 @@
+
+<html>
+<head>
+<style type="text/css">
+	
+body
+{
+
+	background-image: url('https://lintvwtnh.files.wordpress.com/2017/08/hashtag.jpg?w=1200');
+
+
+}
+#main
+{
+	padding: 10px 100px 10px 100px;
+	
+
+
+}
+	#container{
+
+		border: 2px solid black;
+		opacity: 0.95;
+		
+		background-color: white;
+
+
+	}
+</style>
+</head>
+<body>
+<div id="main">
+
+<h3 style="text-align:center;color:white;"> The list of tweets are </h3>
+<div id="container">
+<ol style="text-align: center">
+{% for athlete in list %}
+    <li style="font-weight: bold;border: 1px solid blue;padding: 2px 2px 2px 2px;overflow:hidden;">{{ athlete.text}}</li>
+    <br>
+{% endfor %}
+</ol>
+</div>
+</div>
+
+
+
+</body>
+</html>

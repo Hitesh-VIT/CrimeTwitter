@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TWITTER DATA</title>
+
+<style>
+body
+{
+
+	background-image: url('http://c279160.r60.cf1.rackcdn.com/assets/blog_post/meta_og_image/82/twitter.png');
+	background-repeat: no-repeat;
+}
+
+#container
+
+{
+	position: relative;
+	top:280px;
+	left:500px;
+
+
+
+}
+
+.inline{
+  display: inline-block;
+}
+.inline + .inline{
+  margin-left:10px;
+}
+
+.radio{
+  color:#999;
+  font-size:15px;
+  position:relative;
+
+
+}
+.radio span{
+  position:relative;
+   padding-left:20px;
+}
+
+.radio span:after{
+  content:'';
+  width:15px;
+  height:15px;
+  border:3px solid;
+  position:absolute;
+  left:0;
+  top:1px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+  box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+
+
+.radio input[type="radio"]{
+   cursor: pointer; 
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  opacity: 0;
+}
+.radio input[type="radio"]:checked + span{
+  color:#0B8;  
+}
+.radio input[type="radio"]:checked + span:before{
+    content:'';
+  width:5px;
+  height:5px;
+  position:absolute;
+  background:#0B8;
+  left:5px;
+  top:6px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+}
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+
+
+
+<div id="container">
+<h1> For City Specific Analysis of Twitter Data </h1>
+<br>
+<br>
+<form method="post" action='{% url 'submitdata2' %}' method='POST'>
+{% csrf_token %}
+
+<h3> Select City </h3> 
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Mumbai"><span> Mumbai </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Delhi"><span> Delhi  </span> </label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Kolkata"><span> Kolkata  </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Chennai"><span> Chennai </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="London"><span> London </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Washington DC"><span> Washington DC </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Hague"><span> Hague </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="New York"><span> New York </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Chicago"><span> Chicago </span></label>
+<label class="radio inline"> 
+<input name='handle' id='_handle' type='radio' value="Cuba"><span> Cuba </span></label>
+
+<br>
+<br>
+<h3> Select Crime </h3>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Murder"><span> Murder </span></label>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Assault"><span> Assault </span></label>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Rape"><span> Rape </span></label>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Driving"><span> Driving </span></label>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Smuggling"><span> Smuggling </span></label>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Burglary"><span> Burglary </span></label>
+<label class="radio inline"> 
+<input name='crime' id='_crime' type='radio' value="Pickpocketing"><span> Pickpocketing </span></label>
+<br>
+<br>
+
+ <button type="submit">Click Me!</button> 
+</form>
+</div>
+
+<ol>
+{% for athlete in list %}
+    <li>{{ athlete.location }}</li>
+{% endfor %}
+
+ 
+</ol>
+
+
+
+</body>
+
+
+
+
+</html>
